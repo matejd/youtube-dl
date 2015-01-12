@@ -349,6 +349,7 @@ from .rtlnow import RTLnowIE
 from .rtp import RTPIE
 from .rts import RTSIE
 from .rtve import RTVEALaCartaIE, RTVELiveIE
+from .rtvslo import RTVSloIE
 from .ruhd import RUHDIE
 from .rutube import (
     RutubeIE,
