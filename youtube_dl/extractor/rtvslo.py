@@ -17,10 +17,10 @@ class RTVSloIE(InfoExtractor):
     def _real_extract(self, url):
         video_id = self._match_id(url)
         webpage = self._download_webpage(url, video_id)
-        api_client_id = '82013fb3a531d5414f478747c1aca622' # TODO: Valid until?
+        api_client_id = '82013fb3a531d5414f478747c1aca622'  # TODO: Expires?
         response_json = self._download_json(
-            'http://api.rtvslo.si/ava/getRecording/{video_id}?client_id={api_client_id}'.format(video_id=video_id, api_client_id=api_client_id)
-            , video_id)
+            'http://api.rtvslo.si/ava/getRecording/{0}?client_id={1}'.format(video_id, api_client_id),
+            video_id)
 
         formats = []
         if 'addaptiveMedia' in response_json['response']:
